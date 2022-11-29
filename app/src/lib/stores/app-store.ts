@@ -7377,7 +7377,8 @@ export class AppStore extends TypedBaseStore<IAppState> {
       )
     }
 
-    const { allBranches, recentBranches, defaultBranch } = branchesState
+    const { allBranches, recentBranches, defaultBranch, currentPullRequest } =
+      branchesState
     const { imageDiffType, selectedExternalEditor, showSideBySideDiff } =
       this.getState()
 
@@ -7395,6 +7396,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
           ? commitSHAs[0]
           : null,
       showSideBySideDiff,
+      currentBranchHasPullRequest: currentPullRequest !== null,
     })
   }
 
